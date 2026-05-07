@@ -3,11 +3,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: "./app.html" ,
+  imports: [RouterOutlet ],
+  templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('first-app');
-  protected readonly messsage : string = "Welcome from the class itself. ";
+  protected readonly title = signal('vara-basha');
 }

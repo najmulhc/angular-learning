@@ -1,0 +1,17 @@
+
+<header class="bg-gray-100 py-12 w-full mb-12 flex flex-col justify-center items-center gap-6">
+  <h1 class="text-4xl font-bold text-center mb-8">Best homes for rent</h1>
+  <p class="text-center text-gray-600 mb-12">Discover the best homes for rent in your area.</p>
+
+  <a routerLink="/add">
+  <button class=" bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4 hover:cursor-pointer "> Add new House</button>
+</a>
+</header>
+<div class="grid grid-cols-4 w-full gap-8 px-12 w-full">
+
+@for( house of houses ; track house.name) {
+  <app-housecards [house]="house"></app-housecards>
+} 
+
+
+</div>

@@ -1,2 +1,6 @@
-<p>home works!</p>
-<button>I will not work </button>
+<h1>Welcome to House Listings</h1>
+ 
+
+@for(house of houses; track house.name) {
+  <app-house-cards [house]="house"></app-house-cards>
+}

@@ -1,0 +1,38 @@
+ 
+
+<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"> 
+
+<img [src]="house.photo" class="w-full h-[240px] object-cover" alt="Photo of {{house.name}}" />
+
+<div class="p-6"> 
+    <h2 class="font-semibold text-2xl pb-6"> {{house.name}} </h2>
+
+ <p class="flex items-center gap-1 text-sm text-gray-500">
+  <mat-icon>location_on  </mat-icon>
+  {{ house.state }}
+</p>
+ 
+
+ <div class="flex items-center gap-4 my-4">
+  <div title="Bedrooms" class="flex items-center gap-1 text-lg">
+    <mat-icon>bedroom</mat-icon>
+    <span>{{ house.rooms }}</span>
+  </div>
+  <div title="Bathrooms" class="flex items-center gap-1 text-lg">
+    <mat-icon>bathroom</mat-icon>
+    <span>{{ house.toilets }}</span>
+  </div>
+
+  @if(house.isWifiAvailable) { 
+  <div title="Wifi Available" class="flex items-center gap-1">
+    <mat-icon>wifi</mat-icon>
+  </div> 
+  }
+  
+ </div>
+
+ <h3 class="text-xl font-bold text-gray-800"> {{ house.price }} Taka / month </h3>
+<button (click)="logData()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 hover:cursor-pointer w-full">View Details</button>
+</div> 
+
+</div> 

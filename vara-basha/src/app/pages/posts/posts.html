@@ -1,0 +1,11 @@
+<p>posts works!</p>
+
+@if(postResources.isLoading()) { 
+    <p>Loading posts...</p>
+} @else if(postResources.error()) { 
+    <p>Unexpected Error occured fetching post</p>
+} @else { 
+    @for(post of postResources.value() ; track post.id) { 
+      <app-post-card [post]="post" ></app-post-card>
+    }  
+}
