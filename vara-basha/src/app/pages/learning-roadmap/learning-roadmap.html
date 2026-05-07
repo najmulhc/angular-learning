@@ -1,0 +1,70 @@
+<section class="min-h-screen bg-slate-50 px-6 py-10 text-slate-900">
+  <div class="mx-auto max-w-6xl">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-green-700">Angular learning path</p>
+    <div class="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+      <div class="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+        <div>
+          <h1 class="text-4xl font-bold leading-tight md:text-5xl">
+            Learn Angular by building {{ projectName }}
+          </h1>
+          <p class="mt-5 text-lg leading-8 text-slate-600">
+            Basha Bhara is a house-rent project. Use each feature as a lesson: first understand the Angular concept,
+            then improve the rental app with a small practical task.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              routerLink="/"
+              class="rounded-full bg-green-600 px-5 py-3 font-semibold text-white transition hover:bg-green-700"
+            >
+              View rental cards
+            </a>
+            <a
+              routerLink="/add"
+              class="rounded-full border border-green-600 px-5 py-3 font-semibold text-green-700 transition hover:bg-green-50"
+            >
+              Practice forms
+            </a>
+          </div>
+        </div>
+
+        <aside class="rounded-2xl bg-green-50 p-6 ring-1 ring-green-100">
+          <h2 class="text-xl font-bold text-green-900">How to study</h2>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-green-950">
+            <li>Open the files listed in one step.</li>
+            <li>Change one small thing and save.</li>
+            <li>Run the app and explain what changed.</li>
+            <li>Commit after every working lesson.</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-6">
+      @for (step of learningSteps; track step.title; let index = $index) {
+        <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green-100 text-xl font-bold text-green-700">
+              {{ index + 1 }}
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-bold">{{ step.title }}</h2>
+              <p class="mt-3 text-slate-600">
+                <span class="font-semibold text-slate-900">Angular concept:</span>
+                {{ step.angularConcept }}
+              </p>
+              <p class="mt-2 text-slate-600">
+                <span class="font-semibold text-slate-900">Build task:</span>
+                {{ step.buildTask }}
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                @for (file of step.filesToExplore; track file) {
+                  <code class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{{ file }}</code>
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
